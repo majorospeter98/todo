@@ -108,7 +108,10 @@ function App() {
                   return (
                     <div key={todos.id}>
                       <div className="flex">
-                        <p> {todos.title} </p>
+                        <div>
+                        <p class="flex-p"> {todos.title} </p>
+                        </div>
+                        <div className="group">
                         <button
                           className="drac-btn"
                           size="xs"
@@ -122,6 +125,7 @@ function App() {
                         >
                           Delete
                         </button>
+                        </div>
                       </div>
                     </div>
                   );
