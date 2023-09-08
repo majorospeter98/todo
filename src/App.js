@@ -3,7 +3,6 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import "dracula-ui/styles/dracula-ui.css";
 import { Paragraph } from "dracula-ui";
-
 function App() {
   let [deleted, setDeleted] = useState(false);
   let [active, setActive] = useState(false);
@@ -11,15 +10,14 @@ function App() {
   let [done, setDone] = useState(0);
   let [unDone, setUnDone] = useState(0);
   let [data, setData] = useState("");
-  const [todos, setTodos] = useState( () =>{
-    const local=localStorage.getItem("items");
-    if(local === null) return []
-    return JSON.parse(local)
-
+  const [todos, setTodos] = useState(() => {
+    const local = localStorage.getItem("items");
+    if (local === null) return [];
+    return JSON.parse(local);
   });
   useEffect(() => {
-localStorage.setItem("items", JSON.stringify(todos))
-  }, [todos])
+    localStorage.setItem("items", JSON.stringify(todos));
+  }, [todos]);
   function handleSubmit(e) {
     e.preventDefault();
     if (data.length != 0)
@@ -31,19 +29,16 @@ localStorage.setItem("items", JSON.stringify(todos))
       });
     setData("");
   }
-
   let openlength = todos.filter((todo) => {
     if (todo.completed) {
       return todo;
     }
   });
-
   let completedlength = todos.filter((todo) => {
     if (!todo.completed) {
       return todo;
     }
   });
-
   function donehandle(id) {
     setTodos((current) => {
       return current.map((todo) => {
@@ -51,11 +46,9 @@ localStorage.setItem("items", JSON.stringify(todos))
           setActive(true);
           setTimeout(() => {
             setActive(false);
-          }, 800);
-
+          }, 2000);
           return { ...todo, completed: true };
         }
-
         return todo;
       });
     });
@@ -67,7 +60,7 @@ localStorage.setItem("items", JSON.stringify(todos))
           setUnDone(true);
           setTimeout(() => {
             setUnDone(false);
-          }, 800);
+          }, 2000);
           return { ...todo, completed: false };
         }
         return todo;
@@ -77,17 +70,15 @@ localStorage.setItem("items", JSON.stringify(todos))
   function updateToggle(id) {
     setToggle(id);
   }
-
   function deleteHandle(id) {
     setDeleted(true);
     setTimeout(() => {
       setDeleted(false);
-    }, 800);
+    }, 2000);
     setTodos((current) => {
       return current.filter((todo) => todo.id !== id);
     });
   }
-
   return (
     <body>
       <main>
@@ -117,14 +108,14 @@ localStorage.setItem("items", JSON.stringify(todos))
                   return (
                     <div key={todos.id}>
                       <div className="flex">
-                        {todos.title}
+                        <p> {todos.title} </p>
                         <button
                           className="drac-btn"
+                          size="xs"
                           onClick={() => donehandle(todos.id)}
                         >
                           Done
                         </button>
-
                         <button
                           onClick={() => deleteHandle(todos.id)}
                           className="drac-btn list"
