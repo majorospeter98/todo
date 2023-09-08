@@ -49,6 +49,7 @@ ul {
 .flex-p {
   max-width: 30ch;
   word-break: break-all;
+  font-size:1.2rem;
 }
 .group {
   display: flex;

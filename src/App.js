@@ -93,11 +93,11 @@ function App() {
               You have {todos.length} task.
             </h1>
             <ul className="drac-tabs drac-tabs-pink">
-              <li className="drac-text-green" onClick={() => updateToggle(1)}>
+              <li className="drac-text-purple-cyan" onClick={() => updateToggle(1)}>
                 Open ({completedlength.length})
               </li>
               <li
-                className="drac-text-purple-cyan"
+                className="drac-text-cyan-green"
                 onClick={() => updateToggle(2)}
               >
                 Completed ({openlength.length})
@@ -156,7 +156,7 @@ function App() {
                           className="drac-btn drac-bg-black drac-text-green"
                           onClick={() => unDoneHandle(todos.id)}
                         >
-                          unDone
+                          Undone
                         </button>
                         <button
                           onClick={() => deleteHandle(todos.id)}
