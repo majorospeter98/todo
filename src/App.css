@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  line-height: 1.5;
+  background-color: black;
+  color: white;
 }
 .container {
   max-width: 600px;
@@ -26,13 +29,13 @@ ul {
   display: flex;
   gap: 2rem;
   font-size: 1.4rem;
+  list-style: none;
 }
 .flex {
-  
- display:flex;
- flex-basis:100%;
- justify-content: space-between;
- align-items: center;
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 .flex button {
   font-size: 0.9rem;
@@ -43,13 +46,14 @@ ul {
   padding: 0.5rem;
   text-align: center;
 }
-.flex-p{
-max-width: 30ch;
-word-break: break-all;
+.flex-p {
+  max-width: 30ch;
+  word-break: break-all;
 }
-.group{
-  display:flex;
-  gap:0.5rem;
+.group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 .gap {
   margin-top: 2.5rem;
@@ -66,8 +70,11 @@ word-break: break-all;
   justify-content: center;
   align-items: center;
   color: green;
+  border-radius: 10%;
+  height: 100px;
+  width: 200px;
   position: absolute;
-  top: -10px;
+  top: 5px;
   -webkit-animation: completed 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: completed 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   height: 100px;
@@ -82,12 +89,14 @@ word-break: break-all;
   justify-content: center;
   align-items: center;
   color: red;
-  height: 50px;
+  border-radius: 10%;
+  height: 100px;
   width: 200px;
   position: absolute;
-  top: -10px;
-  -webkit-animation: deleted 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: deleted 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  background-color: gray;
+  top: 5px;
+  -webkit-animation: deleted 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: deleted 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .undone {
   display: flex;
@@ -95,12 +104,14 @@ word-break: break-all;
   justify-content: center;
   align-items: center;
   color: orange;
-  height: 50px;
+  border-radius: 10%;
+  height: 100px;
   width: 200px;
   position: absolute;
-  top: -10px;
-  -webkit-animation: undone 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: undone 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  top: 5px;
+  background-color: red;
+  -webkit-animation: undone 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: undone 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 form {
   display: flex;
@@ -114,7 +125,13 @@ form {
   .flex {
     font-size: 1rem;
     width: 100%;
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .flex-p {
+    max-width: 25ch;
   }
   form {
     width: 60%;

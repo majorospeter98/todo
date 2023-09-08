@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import "dracula-ui/styles/dracula-ui.css";
-import { Paragraph } from "dracula-ui";
+import { Divider, Paragraph } from "dracula-ui";
 function App() {
   let [deleted, setDeleted] = useState(false);
   let [active, setActive] = useState(false);
@@ -101,6 +101,7 @@ function App() {
               </li>
             </ul>
           </div>
+          <Divider/>
           <div className="gap">
             <div className={toggle === 1 ? "show" : "close"}>
               {todos.map((todos) => {
@@ -109,11 +110,11 @@ function App() {
                     <div key={todos.id}>
                       <div className="flex">
                         <div>
-                        <p class="flex-p"> {todos.title} </p>
+                        <p className="flex-p drac-text-purple-cyan"> {todos.title} </p>
                         </div>
                         <div className="group">
                         <button
-                          className="drac-btn"
+                          className="drac-btn drac-bg-black drac-text-green"
                           size="xs"
                           onClick={() => donehandle(todos.id)}
                         >
@@ -121,7 +122,7 @@ function App() {
                         </button>
                         <button
                           onClick={() => deleteHandle(todos.id)}
-                          className="drac-btn list"
+                          className="drac-btn drac-bg-black drac-text-purple list"
                         >
                           Delete
                         </button>
@@ -137,20 +138,24 @@ function App() {
               if (todos.completed)
                 return (
                   <div key={todos.id}>
-                    <div className="flex">
-                      {todos.title}
+                     <div className="flex">
+                     <div>
+                     <p className="flex-p drac-text-purple-cyan"> {todos.title}</p>
+                      </div>
+                      <div className="group">
                       <button
-                        className="divide drac-btn"
+                        className="drac-btn drac-bg-black drac-text-green"
                         onClick={() => unDoneHandle(todos.id)}
                       >
                         unDone
                       </button>
                       <button
                         onClick={() => deleteHandle(todos.id)}
-                        className="drac-btn divide"
+                        className="drac-btn drac-bg-black drac-text-purple list"
                       >
                         Delete
                       </button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -162,11 +167,11 @@ function App() {
               type="text"
               placeholder="Add task"
               value={data}
-              onChange={(e) => setData(e.target.value)}
-              className="drac-input drac-text-white"
+              onChange={(e) => setData(e.target.value)} 
+              className="drac-input  drac-border-green"
               id="input"
             ></input>
-            <button className="drac-btn drac-border-green drac-text-red drac-bg-purple">
+            <button className="drac-btn drac-border-green drac-text-green drac-bg-purple">
               +
             </button>
           </form>
