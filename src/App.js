@@ -93,15 +93,18 @@ function App() {
               You have {todos.length} task.
             </h1>
             <ul className="drac-tabs drac-tabs-pink">
-              <li onClick={() => updateToggle(1)}>
+              <li className="drac-text-green" onClick={() => updateToggle(1)}>
                 Open ({completedlength.length})
               </li>
-              <li onClick={() => updateToggle(2)}>
+              <li
+                className="drac-text-purple-cyan"
+                onClick={() => updateToggle(2)}
+              >
                 Completed ({openlength.length})
               </li>
             </ul>
           </div>
-          <Divider/>
+          <Divider color="grey" />
           <div className="gap">
             <div className={toggle === 1 ? "show" : "close"}>
               {todos.map((todos) => {
@@ -110,22 +113,25 @@ function App() {
                     <div key={todos.id}>
                       <div className="flex">
                         <div>
-                        <p className="flex-p drac-text-purple-cyan"> {todos.title} </p>
+                          <p className="flex-p drac-text-purple-cyan">
+                            {" "}
+                            {todos.title}{" "}
+                          </p>
                         </div>
                         <div className="group">
-                        <button
-                          className="drac-btn drac-bg-black drac-text-green"
-                          size="xs"
-                          onClick={() => donehandle(todos.id)}
-                        >
-                          Done
-                        </button>
-                        <button
-                          onClick={() => deleteHandle(todos.id)}
-                          className="drac-btn drac-bg-black drac-text-purple list"
-                        >
-                          Delete
-                        </button>
+                          <button
+                            className="drac-btn drac-bg-black drac-text-green"
+                            size="xs"
+                            onClick={() => donehandle(todos.id)}
+                          >
+                            Done
+                          </button>
+                          <button
+                            onClick={() => deleteHandle(todos.id)}
+                            className="drac-btn drac-bg-black drac-text-purple list"
+                          >
+                            Delete
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -138,23 +144,26 @@ function App() {
               if (todos.completed)
                 return (
                   <div key={todos.id}>
-                     <div className="flex">
-                     <div>
-                     <p className="flex-p drac-text-purple-cyan"> {todos.title}</p>
+                    <div className="flex">
+                      <div>
+                        <p className="flex-p drac-text-purple-cyan">
+                          {" "}
+                          {todos.title}
+                        </p>
                       </div>
                       <div className="group">
-                      <button
-                        className="drac-btn drac-bg-black drac-text-green"
-                        onClick={() => unDoneHandle(todos.id)}
-                      >
-                        unDone
-                      </button>
-                      <button
-                        onClick={() => deleteHandle(todos.id)}
-                        className="drac-btn drac-bg-black drac-text-purple list"
-                      >
-                        Delete
-                      </button>
+                        <button
+                          className="drac-btn drac-bg-black drac-text-green"
+                          onClick={() => unDoneHandle(todos.id)}
+                        >
+                          unDone
+                        </button>
+                        <button
+                          onClick={() => deleteHandle(todos.id)}
+                          className="drac-btn drac-bg-black drac-text-purple list"
+                        >
+                          Delete
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -167,7 +176,7 @@ function App() {
               type="text"
               placeholder="Add task"
               value={data}
-              onChange={(e) => setData(e.target.value)} 
+              onChange={(e) => setData(e.target.value)}
               className="drac-input  drac-border-green"
               id="input"
             ></input>

@@ -4,7 +4,7 @@
   box-sizing: border-box;
   line-height: 1.5;
   background-color: black;
-  color: white;
+  font-family: "Roboto", sans-serif;
 }
 .container {
   max-width: 600px;
@@ -71,14 +71,12 @@ ul {
   align-items: center;
   color: green;
   border-radius: 10%;
-  height: 100px;
-  width: 200px;
+  height: 50px;
+  width: 120px;
   position: absolute;
-  top: 5px;
+  top: 35px;
   -webkit-animation: completed 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: completed 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  height: 100px;
-  width: 200px;
 }
 .no-completed {
   display: none;
@@ -90,11 +88,10 @@ ul {
   align-items: center;
   color: red;
   border-radius: 10%;
-  height: 100px;
-  width: 200px;
+  height: 50px;
+  width: 120px;
   position: absolute;
-  background-color: gray;
-  top: 5px;
+  top: 35px;
   -webkit-animation: deleted 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: deleted 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -103,13 +100,12 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: orange;
+  color: orangered;
   border-radius: 10%;
-  height: 100px;
-  width: 200px;
+  height: 50px;
+  width: 120px;
   position: absolute;
-  top: 5px;
-  background-color: red;
+  top: 35px;
   -webkit-animation: undone 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: undone 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -118,8 +114,12 @@ form {
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
-  width: 80%;
+  width: 90%;
   gap: 1rem;
+}
+form input {
+  width: 100%;
+  min-width: 230px;
 }
 @media (max-width: 600px) {
   .flex {
@@ -131,6 +131,7 @@ form {
     margin: 0 auto;
   }
   .flex-p {
+    margin-top: 1rem;
     max-width: 25ch;
   }
   form {
