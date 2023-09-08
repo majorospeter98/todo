@@ -28,13 +28,13 @@ ul {
   font-size: 1.4rem;
 }
 .flex {
-  margin-top: 1rem;
-  display: grid;
+   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 80%;
   grid-gap: 2rem;
+  margin: 2rem auto;
 }
 .gap {
   margin-top: 2.5rem;
@@ -51,6 +51,8 @@ ul {
   justify-content: center;
   align-items: center;
   color: green;
+  position: absolute;
+  top:-10px;
   -webkit-animation: completed,
     deleted 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: completed, deleted 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -68,6 +70,8 @@ ul {
   color: red;
   height: 50px;
   width: 200px;
+  position: absolute;
+  top:-10px;
   -webkit-animation: completed 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: completed 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -79,15 +83,19 @@ ul {
   color: orange;
   height: 50px;
   width: 200px;
+  position: absolute;
+  top:-10px;
   -webkit-animation: completed 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: completed 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 form {
-  margin-top: 3rem;
+  
   display: flex;
   justify-content: center;
-  width: 90%;
+  align-items: center;
+  margin: 2rem auto;
+  width: 80%;
   gap: 1rem;
 }
 
