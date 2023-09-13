@@ -1,9 +1,9 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 import "dracula-ui/styles/dracula-ui.css";
 import { Divider, Paragraph } from "dracula-ui";
 function App() {
+  let [task, setTask]= useState("task")
   let [deleted, setDeleted] = useState(false);
   let [active, setActive] = useState(false);
   let [toggle, setToggle] = useState(1);
@@ -15,6 +15,7 @@ function App() {
     if (local === null) return [];
     return JSON.parse(local);
   });
+
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(todos));
   }, [todos]);
@@ -29,6 +30,14 @@ function App() {
       });
     setData("");
   }
+  useEffect(() => {
+   if(todos.length>0) {
+    setTask("Tasks");
+   }
+   else{
+    setTask("Task")
+       }
+  }, [todos]);
   let openlength = todos.filter((todo) => {
     if (todo.completed) {
       return todo;
@@ -80,7 +89,7 @@ function App() {
     });
   }
   return (
-    <body>
+    
       <main>
         <div className="container">
           <div className="up">
@@ -90,7 +99,7 @@ function App() {
             <h3 className={deleted ? "deleted" : "no-completed"}>X Deleted </h3>
             <h3 className={unDone ? "undone" : "no-completed"}>✓ Undone </h3>
             <h1 className="drac-text-purple-cyan">
-              You have {todos.length} task.
+              You have {todos.length} {task}.
             </h1>
             <ul className="drac-tabs drac-tabs-pink">
               <li className="drac-text-purple-cyan" onClick={() => updateToggle(1)}>
@@ -186,7 +195,7 @@ function App() {
           </form>
         </div>
       </main>
-    </body>
+   
   );
 }
 export default App;
