@@ -15,7 +15,6 @@ function App() {
     if (local === null) return [];
     return JSON.parse(local);
   });
-
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(todos));
   }, [todos]);
