@@ -117,10 +117,12 @@ form {
   margin: 2rem auto;
   width: 90%;
   gap: 1rem;
+  
 }
 form input {
   width: 100%;
   min-width: 230px;
+  color:red;
 }
 @media (max-width: 600px) {
   .flex {

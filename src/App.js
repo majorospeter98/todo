@@ -30,7 +30,7 @@ function App() {
     setData("");
   }
   useEffect(() => {
-   if(todos.length>0) {
+   if(todos.length>1) {
     setTask("Tasks");
    }
    else{
